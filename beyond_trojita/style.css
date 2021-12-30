@@ -13,6 +13,12 @@ header#container {
 	margin: 0ex .5em;
 	font-family: "Noto Sans", sans-serif;
 	font-stretch: condensed;
+	/* The style of the ‘enclosed’ HTML mail is applied ‘enclosing’ at the
+	 * document root! So the header is affected as well and we may need to fix
+	 * many unknown style changes explicitly… :-(. A real fix would put the
+	 * HTML mail in a well-separated box and needs to be done in the
+	 * messageviewer code. */
+	text-align: left;
 }
 
 header#container > section {
@@ -135,6 +141,12 @@ div#attachmentDiv1 { /* inner div used for content if there are attachments */
 div#attachmentDiv1 ~ div { /* attachment divs attachmentDiv2, attachmentDiv3, … */
 	margin: 1ex -1em 0ex;
 	font-family: "Noto Sans", sans-serif;
+	/* The style of the ‘enclosed’ HTML mail is applied ‘enclosing’ at the
+	 * document root! So the attachment list is affected as well and we may need
+	 * to fix many unknown style changes explicitly… :-(. A real fix would put
+	 * the HTML mail in a well-separated box and needs to be done in the
+	 * messageviewer code. */
+	text-align: left;
 }
 
 div.quotelevel1, div.quotelevel2, div.quotelevel3,
