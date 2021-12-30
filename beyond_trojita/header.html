@@ -1,0 +1,124 @@
+{# see https://invent.kde.org/pim/messagelib/-/blob/master/messageviewer/src/header/grantleeheaderformatter.cpp for variables #}
+<link href="{{ header.absoluteThemePath }}/style.css" rel="stylesheet" type="text/css" />
+<div id="kmailPage">
+	<header id="container" dir="{{ header.applicationDir }}">
+		<section id="regular">
+			<div class="grid_for_date">
+				<h1 dir="{{ header.subjectDir }}">
+					{{ header.subject|safe }}
+					{% if header.messageIsEncrypted %}
+					<span title="Message is encrypted">{{ header.encryptedIcon|safe }}</span>
+					{% endif %}
+				</h1>
+				<time title="{{ header.date.localelong }}">{{ header.date.fancyshort }}</time> {# TODO: add datetime attribute once iso datetime is exposed #}
+			</div>
+			{% if header.photourl %}
+			<img alt="Avatar" src="{{ header.photourl }}"
+				width="{{ header.photowidth }}" height="{{ header.photoheight }}" />
+			{% endif %}
+			<dl>
+				<input id="sending" type="checkbox" hidden />
+				<dt><label for="sending">From</label></dt>
+				<span title="Click label to toggle full list view">
+					<dd title="{% if header.organization %}{{ header.organization|safe }}{% endif %}">
+						{{ header.from.nameOnly|safe }}</dd>
+					{% if header.messageIsSigned %}
+					<dd id="signed" title="Message is signed">{{ header.signedIcon|safe }}</dd>
+					{% endif %}
+					{% if header.vcardname %}
+					<dd><a href="{{ header.vcardname|safe }}">{{ header.vcardi18n }}</a></dd>
+					{% endif %}
+					{% if header.sender.isSet %}
+					<dt>sent via</dt><dd>{{ header.sender.nameOnly|safe }}</dd>
+					{% endif %}
+					{% if header.replyTo.isSet %}
+					<dt>replies to</dt><dd>{{ header.replyTo.nameOnly|safe }}</dd>
+					{% endif %}
+				</span>
+				{% if header.to.isSet %}
+				<input id="receiving" type="checkbox" hidden />
+				<dt><label for="receiving">To</dt>
+				<span title="Click label to toggle full list view">
+					<dd>{{ header.to.nameOnly|safe }}</dd>
+					{% if header.cc.isSet %}
+					<dt>Cc'd to</dt><dd>{{ header.cc.nameOnly|safe }}</dd>
+					{% endif %}
+					{% if header.bcc.isSet %}
+					<dt>Bcc'd to</dt><dd>{{ header.bcc.nameOnly|safe }}</dd>
+					{% endif %}
+				</span>
+				{% elif header.cc.isSet %}
+				<input id="receiving" type="checkbox" hidden />
+				<dt><label for="receiving">Cc'd to</label></dt>
+				<span title="Click label to toggle full list view">
+					<dd>{{ header.cc.nameOnly|safe }}</dd>
+					{% if header.bcc.isSet %}
+					<dt>Bcc'd to</dt><dd>{{ header.bcc.nameOnly|safe }}</dd>
+					{% endif %}
+				</span>
+				{% elif header.bcc.isSet %}
+				<input id="receiving" type="checkbox" hidden />
+				<dt><label for="receiving">Bcc'd to</label></dt>
+				<span title="Click label to toggle full list view">
+					<dd>{{ header.to.nameOnly|safe }}</dd>
+				</span>
+				{% endif %}
+				{% if header.listid %}
+				<dt><label for="list">List</label></dt>
+				<input id="list" type="checkbox" hidden />
+				<span title="Click label to toggle full list view">
+					<dd>{{ header.listid }}</dd>
+				</span>
+				{% endif %}
+			</dl>
+			{# consider using header.spamHTML, header.spamstatusi18n, header.spamHTML|safe #}
+			{# also available header.hasAttachment, header.attachmentI18n, header.attachmentHtml|safe #}
+		</section>
+		{% if header.resentFrom.isSet %}
+		<section id="resent">
+			<div class="grid_for_date">
+				<dl>
+					<input id="resent_sending" type="checkbox" hidden />
+					<dt><label for="resent_sending">Resent by</label></dt>
+					<span title="Click label to toggle full list view">
+						<dd>{{ header.resentFrom.nameOnly|safe }}</dd>
+					</span>
+					{% if header.resentTo.isSet %}
+					<input id="resent_receiving" type="checkbox" hidden />
+					<dt><label for="resent_receiving">To</dt>
+					<span title="Click label to toggle full list view">
+						<dd>{{ header.resentTo.nameOnly|safe }}</dd>
+						{% if header.resentCc.isSet %}
+						<dt>Cc'd to</dt><dd>{{ header.resentCc.nameOnly|safe }}</dd>
+						{% endif %}
+						{% if header.resentBcc.isSet %}
+						<dt>Bcc'd to</dt><dd>{{ header.resentBcc.nameOnly|safe }}</dd>
+						{% endif %}
+					</span>
+					{% elif header.resentCc.isSet %}
+					<input id="resent_receiving" type="checkbox" hidden />
+					<dt><label for="resent_receiving">Cc'd to</label></dt>
+					<span title="Click label to toggle full list view">
+						<dd>{{ header.resentCc.nameOnly|safe }}</dd>
+						{% if header.resentBcc.isSet %}
+						<dt>Bcc'd to</dt><dd>{{ header.resentBcc.nameOnly|safe }}</dd>
+						{% endif %}
+					</span>
+					{% elif header.resentBcc.isSet %}
+					<input id="resent_receiving" type="checkbox" hidden />
+					<dt><label for="resent_receiving">Bcc'd to</label></dt>
+					<span title="Click label to toggle full list view">
+						<dd>{{ header.to.nameOnly|safe }}</dd>
+					</span>
+					{% endif %}
+				</dl>
+				{% if header.resentDate.isSet %}
+				<time title="{{ header.resentdate.localelong }}">{{ header.resentDate.fancyshort }}</time> {# TODO: add datetime attribute once iso datetime is exposed #}
+				{% else %}
+				<time class="unknown" title="The date the message was resent is unknown">Date unknown</time>
+				{% endif %}
+			</div>
+		</section>
+		{% endif %}
+	</header>
+	<div id="kmailContent">

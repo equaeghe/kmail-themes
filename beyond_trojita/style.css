@@ -1,0 +1,143 @@
+body {
+    margin: 0;
+    padding: 0;
+}
+a:link {
+	text-decoration: none;
+}
+a:hover {
+	text-decoration: underline;
+}
+
+header#container {
+	margin: 0ex .5em;
+	font-family: "Noto Sans", sans-serif;
+	font-stretch: condensed;
+}
+
+header#container > section {
+	border-bottom: 1px solid silver;
+	margin: 1ex 0em;
+}
+
+header#container div.grid_for_date {
+	display: grid;
+	grid-template-columns: auto max-content;
+	align-items: first baseline;
+	column-gap: 2rem;
+}
+
+header#container section#regular h1 {
+	font-size: 125%;
+	font-weight: bold;
+	line-height: 1.5;
+	margin: 0;
+}
+
+header#container time {
+	font-size: 110%;
+	margin: 0;
+}
+header#container time.unknown {
+	color: gray;
+}
+
+header#container section#regular > img {
+	float: right;
+	border: 1px solid darkgray;
+	margin: 0ex 1em 1ex;
+}
+
+header#container dl {
+	display: grid;
+	grid-template-columns: max-content max-content auto;
+	align-items: first baseline;
+	line-height: 1.75;
+	margin: .5ex 1em 1ex 0em;
+}
+header#container dl * {
+	margin: 0;
+	display: inline;
+}
+header#container dl > input {
+	grid-column-start: 1;
+	display: none;
+}
+header#container dl dt {
+	font-weight: 550;
+}
+header#container dl dt::after {
+	content: ' ';
+}
+header#container dl > dt {
+	grid-column-start: 2;
+	text-align: right;
+}
+header#container dl > dt {
+	margin-right: .3em;
+}
+header#container dl > span {
+	grid-column-start: 3;
+}
+header#container dl > span {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+header#container dl > dt:hover,
+header#container dl > dt:hover > label {
+	cursor: pointer;
+}
+header#container dl > dt:hover + span,
+header#container dl > span:hover,
+header#container dl > input:checked + dt + span {
+	white-space: normal;
+	overflow: visible;
+}
+header#container dl > input:checked + dt {
+	text-decoration: underline;
+}
+header#container dl dd a {
+	display: inline-block; /* NOTE: needed for proper elision */
+	color: hsl(240deg, 100%, 25%);
+	background-color: hsl(240deg, 100%, 97%);
+	border-radius: 5px;
+	border-bottom: 2px solid hsl(240deg, 100%, 97%);
+	padding: 0ex .2em;
+	margin: .2ex 0em;
+	/* TODO: fix vertical height messed up (too high) due to inline-block */
+}
+header#container dl dd a:hover {
+	border-bottom: 2px solid hsl(240deg, 100%, 75%);
+	text-decoration: none;
+}
+
+header#container h1 img, header#container dl dd#signed img {
+	vertical-align: top;
+}
+
+section#regular::after { /* clearfix: https://developer.mozilla.org/en-US/docs/Web/CSS/clear */
+	content: "";
+	display: block;
+	clear: both;
+}
+
+#kmailContent {
+	clear: both;
+	margin-bottom: 2ex;
+}
+div#attachmentDiv { /* outer div; used for content if there are no attachments */
+	margin: 2ex 1.5em 0ex;
+}
+div#attachmentDiv1 { /* inner div used for content if there are attachments */
+	margin: 0ex 0em 2ex;
+}
+div#attachmentDiv1 ~ div { /* attachment divs attachmentDiv2, attachmentDiv3, … */
+	margin: 1ex -1em 0ex;
+	font-family: "Noto Sans", sans-serif;
+}
+
+div.quotelevel1, div.quotelevel2, div.quotelevel3,
+div.deepquotelevel3, div.deepquotelevel3, div.deepquotelevel3 {
+	font-style: normal !important;
+}
