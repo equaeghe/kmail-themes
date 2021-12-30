@@ -1,8 +1,8 @@
 [Desktop Entry]
 Author=Erik Quaeghebeur
-Description=KMail theme inspired by the (compact) header style of the Trojità mail application, but including further features, such as bubbled addresses and convenient long address list elision management. Sender photo/avatar does not load reliably for some unknown reason (reselect theme to force).
-Description[nl]=KMail-thema geïnspireerd door de (compacte) hoofdingstijl van het mailprogramma Trojità, maar met bijkomende eigenschappen, zoals mail-adressen in bubbels en handig weglatingsbeheer van lange adreslijsten. De foto/avatar van de afzender wordt niet betrouwbaar geladen wegens een onbekende reden (thema herselecteren om te forceren).
+Description=KMail theme inspired by the (compact) header style of the Trojitá mail application, but including further features, such as bubbled addresses and convenient long address list elision management. Sender photo/avatar does not load reliably for some unknown reason (reselect theme to force).
+Description[nl]=KMail-thema geïnspireerd door de (compacte) hoofdingstijl van het mailprogramma Trojitá, maar met bijkomende eigenschappen, zoals mail-adressen in bubbels en handig weglatingsbeheer van lange adreslijsten. De foto/avatar van de afzender wordt niet betrouwbaar geladen wegens een onbekende reden (thema herselecteren om te forceren).
 FileName=header.html
-Name=Beyond Trojità
-Name[nl]=Voorbij Trojità
+Name=Beyond Trojitá
+Name[nl]=Voorbij Trojitá
 ThemeVersion=0.5
