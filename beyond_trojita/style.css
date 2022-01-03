@@ -18,6 +18,7 @@ header#container {
 	 * many unknown style changes explicitly… :-(. A real fix would put the
 	 * HTML mail in a well-separated box and needs to be done in the
 	 * messageviewer code. */
+	background: white;
 	text-align: left;
 }
 
@@ -146,6 +147,7 @@ div#attachmentDiv1 ~ div { /* attachment divs attachmentDiv2, attachmentDiv3, �
 	 * to fix many unknown style changes explicitly… :-(. A real fix would put
 	 * the HTML mail in a well-separated box and needs to be done in the
 	 * messageviewer code. */
+	background: white;
 	text-align: left;
 }
 
