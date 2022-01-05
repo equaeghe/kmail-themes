@@ -72,7 +72,6 @@
 				{% endif %}
 			</dl>
 			{# consider using header.spamHTML, header.spamstatusi18n, header.spamHTML|safe #}
-			{# also available header.hasAttachment, header.attachmentI18n, header.attachmentHtml|safe #}
 		</section>
 		{% if header.resentFrom.isSet %}
 		<section id="resent">
@@ -124,4 +123,9 @@
 		</section>
 		{% endif %}
 	</header>
+	{% if header.hasAttachment %}
+	{# also available header.attachmentI18n, header.attachmentHtml|safe #}
+	<input id="attachments_button" type="checkbox" hidden />
+	<label class="subheader" for="attachments_button"></label>
+	{% endif %}
 	<div id="kmailContent">
