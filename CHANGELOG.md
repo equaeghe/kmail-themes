@@ -7,6 +7,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ## [Unreleased]
 ### Fixed
 - Beyond Trojitá: make sure ‘enclosed’ HTML mail's style does not override our text alignment
+- Beyond Trojitá: make sure the whole label width is clickable
 
 ## [0.1.0] - 2021-12-30
 ### Added

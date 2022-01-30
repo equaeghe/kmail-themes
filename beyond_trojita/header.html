@@ -18,7 +18,7 @@
 			{% endif %}
 			<dl>
 				<input id="orig" type="checkbox" hidden />
-				<dt><label for="orig">From</label></dt>
+				<label for="orig"><dt>From</dt></label>
 				<span title="Click label to toggle full list view">
 					<dd title="{% if header.organization %}{{ header.organization|safe }}{% endif %}">
 						{{ header.from.nameOnly|safe }}</dd>
@@ -37,7 +37,7 @@
 				</span>
 				{% if header.to.isSet %}
 				<input id="dest" type="checkbox" hidden />
-				<dt><label for="dest">To</dt>
+				<label for="dest"><dt>To</dt></label>
 				<span title="Click label to toggle full list view">
 					<dd>{{ header.to.nameOnly|safe }}</dd>
 					{% if header.cc.isSet %}
@@ -49,7 +49,7 @@
 				</span>
 				{% elif header.cc.isSet %}
 				<input id="dest" type="checkbox" hidden />
-				<dt><label for="dest">Cc'd to</label></dt>
+				<label for="dest"><dt>Cc'd to</dt></label>
 				<span title="Click label to toggle full list view">
 					<dd>{{ header.cc.nameOnly|safe }}</dd>
 					{% if header.bcc.isSet %}
@@ -58,14 +58,14 @@
 				</span>
 				{% elif header.bcc.isSet %}
 				<input id="dest" type="checkbox" hidden />
-				<dt><label for="dest">Bcc'd to</label></dt>
+				<label for="dest"><dt>Bcc'd to</dt></label>
 				<span title="Click label to toggle full list view">
 					<dd>{{ header.bcc.nameOnly|safe }}</dd>
 				</span>
 				{% endif %}
 				{% if header.listid %}
-				<dt><label for="list">List</label></dt>
 				<input id="list" type="checkbox" hidden />
+				<label for="list"><dt>List</dt></label>
 				<span title="Click label to toggle full list view">
 					<dd>{{ header.listid }}</dd>
 				</span>
@@ -78,7 +78,7 @@
 			<div class="grid_for_date">
 				<dl>
 					<input id="resent_orig" type="checkbox" hidden />
-					<dt><label for="resent_orig">Resent by</label></dt>
+					<label for="resent_orig"><dt>Resent by</dt></label>
 					<span title="Click label to toggle full list view">
 						<dd>{{ header.resentFrom.nameOnly|safe }}</dd>
 						{% if header.resentSender.isSet %}
@@ -87,7 +87,7 @@
 					</span>
 					{% if header.resentTo.isSet %}
 					<input id="resent_dest" type="checkbox" hidden />
-					<dt><label for="resent_dest">To</dt>
+					<label for="resent_dest"><dt>To</dt></label>
 					<span title="Click label to toggle full list view">
 						<dd>{{ header.resentTo.nameOnly|safe }}</dd>
 						{% if header.resentCc.isSet %}
@@ -99,7 +99,7 @@
 					</span>
 					{% elif header.resentCc.isSet %}
 					<input id="resent_dest" type="checkbox" hidden />
-					<dt><label for="resent_dest">Cc'd to</label></dt>
+					<label for="resent_dest"><dt>Cc'd to</dt></label>
 					<span title="Click label to toggle full list view">
 						<dd>{{ header.resentCc.nameOnly|safe }}</dd>
 						{% if header.resentBcc.isSet %}
@@ -108,7 +108,7 @@
 					</span>
 					{% elif header.resentBcc.isSet %}
 					<input id="resent_dest" type="checkbox" hidden />
-					<dt><label for="resent_dest">Bcc'd to</label></dt>
+					<label for="resent_dest"><dt>Bcc'd to</dt></label>
 					<span title="Click label to toggle full list view">
 						<dd>{{ header.to.nameOnly|safe }}</dd>
 					</span>

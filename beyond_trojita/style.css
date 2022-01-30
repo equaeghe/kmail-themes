@@ -75,32 +75,26 @@ header#container dl dt {
 header#container dl dt::after {
 	content: ' ';
 }
-header#container dl > dt {
+header#container dl > label {
 	grid-column-start: 2;
 	text-align: right;
-}
-header#container dl > dt {
 	margin-right: .3em;
+}
+header#container dl > label:hover {
+	cursor: pointer;
 }
 header#container dl > span {
 	grid-column-start: 3;
-}
-header#container dl > span {
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
 }
-header#container dl > dt:hover,
-header#container dl > dt:hover > label {
-	cursor: pointer;
-}
-header#container dl > dt:hover + span,
 header#container dl > span:hover,
-header#container dl > input:checked + dt + span {
+header#container dl > input:checked + label + span {
 	white-space: normal;
 	overflow: visible;
 }
-header#container dl > input:checked + dt {
+header#container dl > input:checked + label > dt {
 	text-decoration: underline;
 }
 header#container dl dd a {
@@ -155,9 +149,9 @@ label.subheader {
 	font-stretch: condensed;
 	font-weight: 550;
 	border: 1px solid;
-	border-top: 0px;
-	border-radius: 0px 0px 5px 5px;
-	padding: 0px 5px;
+	border-top: 0;
+	border-radius: 0 0 5px 5px;
+	padding: 0 5px;
 	margin-left: .5em;
 }
 
