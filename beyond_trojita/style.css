@@ -164,10 +164,10 @@ input#attachments_button + label.subheader:hover {
 	cursor: pointer;
 }
 input#attachments_button + label.subheader::after {
-	content: 'Attachments';
+	content: 'Show Attachments Only';
 }
 input#attachments_button:checked + label.subheader::after {
-	content: 'Full Message';
+	content: 'Show Full Message';
 }
 input#attachments_button:checked ~ div#kmailContent div#attachmentDiv1 {
 	display: none;
